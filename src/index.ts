@@ -17,7 +17,9 @@ const requiredRange1: Ranges = [null, 200];
 const requiredRange2: Ranges = [100, 350];
 const requiredRange3: Ranges = [200, null];
 
-const getFilteredCourses = (courses: Courses, [from, to]: Ranges): Courses => {
+const getFilteredCourses = (courses: Courses, range: Ranges): Courses => {
+  const [from, to] = range;
+
   const result = courses.filter(({ prices: [min, max] }) => {
     let pass = (min ?? max ?? Infinity) >= (from ?? 0);
     if (pass) {
