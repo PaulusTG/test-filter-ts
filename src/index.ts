@@ -1,11 +1,4 @@
-type Course = {
-  name: string,
-  prices: (number | null)[]
-};
-
-type Courses = Course[];
-
-type Ranges = (number | null)[];
+import { Courses, Ranges } from "./types";
 
 // Список курсов
 const COURSES: Courses = [
